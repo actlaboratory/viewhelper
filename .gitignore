@@ -1,1 +1,4 @@
-falconHelper.dll
+*.dll
+*.exp
+*.lib
+*.obj
