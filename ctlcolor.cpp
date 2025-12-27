@@ -44,14 +44,14 @@ LRESULT CALLBACK CheckboxProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp)
 dll_funcdef int ScRadioButton(HWND wnd)
 {
     DefRadioButtonProc = (WNDPROC)GetWindowLongPtr(wnd, GWLP_WNDPROC);
-    SetWindowLongPtr(wnd, GWLP_WNDPROC, (LONG)RadioButtonProc);
+    SetWindowLongPtr(wnd, GWLP_WNDPROC, (LONG_PTR)RadioButtonProc);
     return 0;
 }
 
 dll_funcdef int ScCheckbox(HWND wnd)
 {
     DefCheckboxProc = (WNDPROC)GetWindowLongPtr(wnd, GWLP_WNDPROC);
-    SetWindowLongPtr(wnd, GWLP_WNDPROC, (LONG)CheckboxProc);
+    SetWindowLongPtr(wnd, GWLP_WNDPROC, (LONG_PTR)CheckboxProc);
     return 0;
 }
 

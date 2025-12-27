@@ -17,7 +17,7 @@ BOOL CALLBACK EnumChildProc(HWND hwnd, LPARAM lParam)
     {
         return 1;
     }
-    LONG l = GetWindowLong(hwnd, -16);
+    LONG_PTR l = GetWindowLongPtr(hwnd, GWL_STYLE);
     //TCHAR windowText[512]={0};
     //GetWindowText(hwnd,windowText,512);
     //char c_out[512]={0};
@@ -27,7 +27,7 @@ BOOL CALLBACK EnumChildProc(HWND hwnd, LPARAM lParam)
     //printf("index %d className %s style 0x%x text %s\n",count,c_out,l,t_out);
     if (l % 16 == 9)
     {
-        wnds.push_back(to_string(reinterpret_cast<int>(hwnd)));
+        wnds.push_back(to_string(reinterpret_cast<intptr_t>(hwnd)));
     }
     return 1;
 }
